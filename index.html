@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makar Sankranti Event Flyer</title>
+    
+    <!-- Open Graph Meta Tags for WhatsApp Sharing -->
+    <meta property="og:title" content="Makar Sankranti Celebration 2026 - Triveni Mitra Mandal">
+    <meta property="og:description" content="Join us for a colorful celebration of Makar Sankranti with Marathi cinema-inspired performances, dance, drama, music, and fashion. January 24, 2026 at Milford High School, OH.">
+    <meta property="og:image" content="https://www.triveni-mandal.org/makar-sankranti-thumbnail.jpg">
+    <meta property="og:type" content="event">
+    <meta property="og:url" content="https://www.triveni-mandal.org/event-details/makar-sankrant-celebration-2026">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: 'Georgia', serif;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .flyer {
+            width: 100%;
+            max-width: 500px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800"><defs><pattern id="stars" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="15" cy="20" r="2" fill="%23D4AF37" opacity="0.8"/><circle cx="45" cy="35" r="1.5" fill="%23D4AF37" opacity="0.6"/><circle cx="70" cy="15" r="1" fill="%23D4AF37" opacity="0.5"/><circle cx="25" cy="60" r="1.5" fill="%23D4AF37" opacity="0.7"/><circle cx="55" cy="75" r="1" fill="%23D4AF37" opacity="0.4"/><circle cx="80" cy="50" r="2" fill="%23D4AF37" opacity="0.6"/></pattern></defs><rect width="600" height="800" fill="%23000000"/><rect width="600" height="800" fill="url(%23stars)" opacity="0.6"/></svg>');
+            background-size: 100% 100%;
+            background-color: #000;
+            position: relative;
+            border: 4px solid #D4AF37;
+            display: flex;
+            flex-direction: column;
+            padding: 15px 14px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8), inset 0 0 20px rgba(212,175,55,0.1);
+            min-height: 600px;
+        }
+
+        .corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><path d="M10,10 Q30,10 40,30 Q35,20 20,15 Q15,25 10,40 Z" fill="%23D4AF37"/><circle cx="50" cy="15" r="3" fill="%23D4AF37" opacity="0.7"/><circle cx="60" cy="25" r="2" fill="%23D4AF37" opacity="0.6"/><circle cx="70" cy="20" r="2.5" fill="%23D4AF37" opacity="0.5"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .corner-tl { top: 0; left: 0; }
+        .corner-tr { top: 0; right: 0; transform: scaleX(-1); }
+        .corner-bl { bottom: 0; left: 0; transform: scaleY(-1); }
+        .corner-br { bottom: 0; right: 0; transform: scaleX(-1) scaleY(-1); }
+
+        h1 {
+            font-size: 1em;
+            color: #D4AF37;
+            font-weight: normal;
+            letter-spacing: 0.3px;
+            margin: 1px 0;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 1.4em;
+            color: #D4AF37;
+            font-style: italic;
+            margin: 10px 0 2px 0;
+            text-shadow: 0.5px 0.5px 2px rgba(0,0,0,0.7);
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .divider {
+            width: 180px;
+            height: 1px;
+            background: #D4AF37;
+            margin: 2px auto;
+        }
+
+        .date-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin: 8px 0 2px 0;
+            font-size: 0.75em;
+            color: #D4AF37;
+        }
+
+        .date-day {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 4px 0;
+            padding: 4px 0;
+            font-size: 0.6em;
+        }
+
+        .price-box {
+            background: #D4AF37;
+            color: #000;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-radius: 2px;
+            line-height: 1.2;
+        }
+
+        .events-header {
+            color: #D4AF37;
+            font-size: 0.7em;
+            font-weight: bold;
+            margin: 6px 0 3px 0;
+            padding: 3px 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin: 5px 0;
+            padding: 3px 0;
+            font-size: 0.7em;
+            font-weight: bold;
+            color: #D4AF37;
+            text-align: center;
+        }
+
+        .event-column {
+            line-height: 1.3;
+        }
+
+        .location {
+            display: block;
+            font-size: 0.7em;
+            color: #D4AF37;
+            margin: 4px 0 0 0;
+            padding: 4px 0;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .location-name {
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .qr-section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            margin-top: 4px;
+        }
+
+        .registration-section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            margin-top: 4px;
+        }
+
+        .registration-text {
+            font-size: 0.6em;
+            color: #D4AF37;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .register-btn {
+            background: linear-gradient(135deg, #DC143C, #FF1744);
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 2px;
+            font-size: 0.6em;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 8px rgba(220, 20, 60, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(220, 20, 60, 0.6);
+        }
+
+        .registration-link {
+            font-size: 0.45em;
+            color: #D4AF37;
+            text-decoration: none;
+            word-break: break-word;
+            line-height: 1;
+        }
+
+        .qr-placeholder {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border: none;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            overflow: hidden;
+        }
+
+        .qr-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .buy-now-btn {
+            background: linear-gradient(135deg, #DC143C, #FF1744);
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 2px;
+            font-size: 0.6em;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 8px rgba(220, 20, 60, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .buy-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(220, 20, 60, 0.6);
+        }
+
+        .buy-link {
+            font-size: 0.45em;
+            color: #D4AF37;
+            text-decoration: none;
+            word-break: break-word;
+            line-height: 1;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 1px;
+            flex-wrap: wrap;
+        }
+
+        .title-logo {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid #D4AF37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            color: #D4AF37;
+            flex-shrink: 0;
+        }
+
+        .title-logo img {
+            width: 110%;
+            height: 110%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+
+        .bottom-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .footer {
+            font-size: 0.5em;
+            color: #D4AF37;
+            text-align: center;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #D4AF37;
+            line-height: 1.4;
+        }
+
+        .footer a {
+            color: #D4AF37;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .flyer {
+                padding: 12px 10px;
+            }
+
+            h1 {
+                font-size: 1em;
+            }
+
+            .main-title {
+                font-size: 1.3em;
+            }
+
+            .date-day {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="content">
+            <div class="content-top">
+                <div class="title-section">
+                    <div class="title-logo"><img src="triveni-logo.jpg" alt="logo"></div>
+                    <h1>Triveni Mitra Mandal</h1>
+                </div>
+                
+                <div style="text-align: center; font-size: 0.9em; color: #D4AF37; margin-bottom: 8px;">invites you to</div>
+
+                <div class="main-title">✦ Makar Sankranti ✦</div>
+
+                <div class="divider"></div>
+
+                <div class="date-section">
+                    <span>3:00 PM</span>
+                    <span>|</span>
+                    <div style="text-align: center;">
+                        <div style="font-size: 0.8em; margin-bottom: 1px;">Jan</div>
+                        <div class="date-day">24</div>
+                        <div style="font-size: 0.8em; margin-top: 1px;">2026</div>
+                    </div>
+                    <span>|</span>
+                    <span>9:00 PM</span>
+                </div>
+
+                <div class="pricing-container">
+                    <div class="price-box">Members<br>5 to 12: $25<br>13+: $35</div>
+                    <div class="price-box">Non-Members<br>5 to 12: $35<br>13+: $45</div>
+                </div>
+
+                <div class="events-header">The colorful journey of Marathi cinema from silent films to the digital age!<br>Lights, Camera, Action! Participate in this cinematic festival!<br><br>Events:</div>
+
+                <div class="events-grid">
+                    <div class="event-column">
+                        ▪ Haldi Kunku<br>
+                        ▪ Iconic Marathi film-inspired performances
+                    </div>
+                    <div class="event-column">
+                        ▪ Dance ▪ Drama<br>
+                        ▪ Music ▪ Fashion<br>
+                        ▪ Re-living golden eras<br>
+                        ▪ Cultural Show
+                    </div>
+                </div>
+
+                <div class="location">
+                    <div class="location-name">Milford High School</div>
+                    1 Eagles Watch Wy<br>
+                    Milford, OH 45150
+                </div>
+            </div>
+
+            <div class="bottom-section">
+                <div class="registration-section">
+                    <div class="registration-text">Become Member</div>
+                    <a href="https://www.triveni-mandal.org/plans-pricing" target="_blank" class="register-btn">Register</a>
+                    <a href="https://www.triveni-mandal.org/plans-pricing" target="_blank" class="registration-link">🌐 triveni-mandal.org</a>
+                </div>
+
+                <div class="qr-section">
+                    <div class="qr-placeholder">
+                       <img src="QR-code.jpg" alt="QR Code">
+                    </div>
+                    <a href="https://www.triveni-mandal.org/event-details/makar-sankrant-celebration-2026" target="_blank" class="buy-now-btn">Buy Now</a>
+                    <a href="https://www.triveni-mandal.org/event-details/makar-sankrant-celebration-2026" target="_blank" class="buy-link">🌐 triveni-mandal.org</a>
+                </div>
+            </div>
+
+            <div class="footer">
+                For ticketing and membership, please visit<br>
+                <a href="https://www.triveni-mandal.org" target="_blank">www.triveni-mandal.org</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
